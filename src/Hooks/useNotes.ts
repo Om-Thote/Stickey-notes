@@ -5,13 +5,11 @@ import { saveNotesToStorage, loadNotesFromStorage } from '../utils/localStorage'
 export const useNotes = () => {
   const [notes, setNotes] = useState<Note[]>([]);
 
-  // Load notes from localStorage on component mount
   useEffect(() => {
     const savedNotes = loadNotesFromStorage();
     setNotes(savedNotes);
   }, []);
 
-  // Save notes to localStorage whenever notes change
   useEffect(() => {
     saveNotesToStorage(notes);
   }, [notes]);

@@ -19,9 +19,9 @@ const Card: React.FC<CardProps> = ({ note, onDelete, initialPosition = { x: 0, y
       dragElastic={0.1}
       dragConstraints={{
         left: 0,
-        right: window.innerWidth - 300, // Assuming max card width of 300px
+        right: window.innerWidth - 300,
         top: 0,
-        bottom: window.innerHeight - 200, // Assuming max card height of 200px
+        bottom: window.innerHeight - 200,
       }}
       initial={initialPosition}
       whileDrag={{ scale: 1.05, zIndex: 1000 }}
