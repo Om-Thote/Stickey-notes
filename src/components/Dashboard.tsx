@@ -9,7 +9,7 @@ import OpacitySlider from './OpacitySlider';
 const Dashboard: React.FC = () => {
     const { notes, addNote, deleteNote } = useNotes();
     const [showAddForm, setShowAddForm] = useState(false);
-    const [opacity, setOpacity] = useState(100); // Default to 100% opacity
+    const [opacity, setOpacity] = useState(100);
 
     const handleAddNote = (formData: { title: string; content: string }) => {
         addNote(formData);
@@ -20,13 +20,11 @@ const Dashboard: React.FC = () => {
         setShowAddForm(false);
     };
 
-    // Generate random initial positions for new notes
     const getRandomPosition = (index: number) => {
         const padding = 20;
-        const maxX = window.innerWidth - 320; // Card width + padding
-        const maxY = window.innerHeight - 250; // Estimated card height + padding
+        const maxX = window.innerWidth - 320;
+        const maxY = window.innerHeight - 250;
 
-        // Stagger new notes with slight offsets
         const baseX = 50 + (index * 30) % (maxX - 100);
         const baseY = 100 + (index * 40) % (maxY - 200);
 
@@ -36,12 +34,10 @@ const Dashboard: React.FC = () => {
         };
     };
 
-    // Convert opacity percentage to decimal for CSS
     const opacityValue = opacity / 100;
 
     return (
         <div className="min-h-screen bg-gray-50 overflow-hidden">
-            {/* Fixed Header */}
             <div
                 className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 p-4"
                 style={{ opacity: opacityValue }}
@@ -58,7 +54,6 @@ const Dashboard: React.FC = () => {
                 </div>
             </div>
 
-            {/* Add Note Form - Fixed position */}
             {showAddForm && (
                 <div
                     className="fixed top-20 left-1/2 transform -translate-x-1/2 z-40 w-full max-w-md px-4"
@@ -71,7 +66,6 @@ const Dashboard: React.FC = () => {
                 </div>
             )}
 
-            {/* Notes Canvas */}
             <div
                 className="relative w-full h-screen pt-20"
                 style={{ opacity: opacityValue }}
