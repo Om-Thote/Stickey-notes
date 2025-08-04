@@ -10,7 +10,7 @@ A beautiful, interactive notes application built with React, TypeScript, and Fra
 - **💾 Local Storage**: Automatic saving and loading of notes
 - **🎭 Glass Morphism**: Modern UI with backdrop blur effects
 - **📱 Responsive Design**: Works on desktop and mobile devices
-- **⚡ Real-time Updates**: Instant note creation, editing, and deletion
+- **⚡ Real-time Updates**: Instant note creation, editing, and delete
 
 ## 🛠️ Tech Stack
 
